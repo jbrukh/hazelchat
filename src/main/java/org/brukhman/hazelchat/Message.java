@@ -1,4 +1,4 @@
-package org.brukhman.cluster;
+package org.brukhman.hazelchat;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -55,7 +55,7 @@ public final class Message {
 	 * 
 	 * @return
 	 */
-	public final String getMessage() {
+	public final String getText() {
 		return message;
 	}
 	

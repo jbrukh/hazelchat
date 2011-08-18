@@ -1,4 +1,4 @@
-package org.brukhman.cluster;
+package org.brukhman.hazelchat;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -58,4 +58,8 @@ public class User {
 		return true;
 	}
 	
+	@Override
+	public String toString() {
+		return name;
+	}
 }
