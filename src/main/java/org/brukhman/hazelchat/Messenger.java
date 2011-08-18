@@ -29,10 +29,12 @@ public final class Messenger implements MessageListener<Message> {
 	}
 	
 	public final void start() {
+		System.out.println("Starting for user: " + user);
 		final ITopic<Message> topic = Hazelcast.getTopic("default");
 		topic.addMessageListener(this);
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(System.in)); // yes, this never gets closed
 		while(true) {
 			String line = null;
 			try {
@@ -44,7 +46,8 @@ public final class Messenger implements MessageListener<Message> {
 	}
 	
 	public void onMessage(Message message) {
-		System.out.println(String.format("%s: %s", message.getSourceUser(), message.getText()));
+		System.out.println(String.format("%s: %s", message.getSourceUser(), 
+				message.getText()));
 	}
 	
 	/**
@@ -53,11 +56,11 @@ public final class Messenger implements MessageListener<Message> {
 	 * @param args
 	 */
 	public static final void main(String... args) {
-		if (args.length < 2 ) {
+		if (args.length < 1 ) {
 			System.exit(1);
 		}
 		
-		String user = args[1];
+		String user = args[0];
 		if (user == null || user.length() < 1) {
 			System.exit(1);
 		}

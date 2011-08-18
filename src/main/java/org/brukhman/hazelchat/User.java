@@ -2,6 +2,8 @@ package org.brukhman.hazelchat;
 
 import static com.google.common.base.Preconditions.*;
 
+import java.io.Serializable;
+
 import com.google.common.base.Objects;
 
 /**
@@ -10,8 +12,13 @@ import com.google.common.base.Objects;
  * @author jbrukh
  *
  */
-public class User {
+public class User implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7393291681353434649L;
+	
 	/**
 	 * The name of the user.
 	 */

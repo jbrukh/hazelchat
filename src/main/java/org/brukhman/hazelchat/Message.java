@@ -2,6 +2,7 @@ package org.brukhman.hazelchat;
 
 import static com.google.common.base.Preconditions.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,12 @@ import java.util.Date;
  * @author jbrukh
  *
  */
-public final class Message {
+public final class Message implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6657747211637617628L;
 
 	/**
 	 * The source user.
