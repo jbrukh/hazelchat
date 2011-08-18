@@ -2,6 +2,8 @@ package org.brukhman.cluster;
 
 import static com.google.common.base.Preconditions.*;
 
+import com.google.common.base.Objects;
+
 /**
  * A user.
  * 
@@ -32,6 +34,28 @@ public class User {
 	 */
 	public final String getName() {
 		return this.name;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 	
 }

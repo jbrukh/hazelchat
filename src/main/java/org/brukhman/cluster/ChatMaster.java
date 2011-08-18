@@ -1,5 +1,5 @@
 package org.brukhman.cluster;
 
-public class ChatRoom {
+public class ChatMaster {
 
 }
